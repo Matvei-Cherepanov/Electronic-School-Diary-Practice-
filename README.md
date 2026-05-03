@@ -20,4 +20,28 @@
 
 - Сервер поднимется по адресу http://localhost:8080 — откройте браузер и перейдите туда.
 
+
+## Журнал разрешения конфликтов
+
+### 2026-05-03 - Конфликт в файле conflict.cs
+
+**Слияние:** ветка `feature/status-manager` → `develop`
+
+**Причина конфликта:**
+В обеих ветках была изменена одна и та же переменная в файле `conflict.cs`:
+- В ветке `develop` переменная изменена на: `UserName`
+- В ветке `feature/status-manager` строка изменена на: `StudentName`
+
+**Как был разрешён конфликт:**
+- Был выбран обобщенный вариант для ветки `develop` как основной
+- Оба изменения совместимы и не нарушают работу кода
+
+**Команды для разрешения:**
+```bash
+git checkout develop
+git merge feature/status-manager
+# Ручное редактирование conflict.cs
+git add conflict.txt
+git commit -m "Merge branch 'feature/status-manager': разрешён конфликт в conflict.txt"
+
 Study Practice project
