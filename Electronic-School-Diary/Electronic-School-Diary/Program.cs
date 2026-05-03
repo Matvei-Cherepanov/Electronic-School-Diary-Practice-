@@ -10,7 +10,15 @@ namespace Electronic_School_Diary
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello student!");
+            Greating("Student");
+            Greating("Teacher");
+            Greating("Parent");
+            Greating("Admin");
+        }
+
+        static void Greating(string role)
+        {
+            Console.WriteLine($"Hello {role}!");
         }
     }
 }
